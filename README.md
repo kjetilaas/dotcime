@@ -1,5 +1,5 @@
 # dotcime
-Configuration file for porting CTSM to the machines Saga and Fram under a .cime-folder.
+Configuration files for porting CTSM to the machines Saga and Fram under a .cime-folder.
 
 This repositroy makes it possible to pull the latest changes in [cime](https://github.com/ESMCI/cime) whithout affecting your machine configuration. 
 
