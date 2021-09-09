@@ -82,16 +82,23 @@ This allows using a different mpirun command to launch unit tests -->
       <modules>
         <command name="purge">--force</command>
         <command name="load">StdEnv</command>
-        <command name="load">iimpi/2019b</command>
-        <command name="load">netCDF-Fortran/4.5.2-iimpi-2019b</command>  
-        <command name="load">CMake/3.15.3-GCCcore-8.3.0</command>
+        <command name="load">iimpi/2021a</command>
+        <command name="load">netCDF-Fortran/4.5.3-iimpi-2021a</command>
+        <command name="load">PnetCDF/1.12.2-iimpi-2021a</command>
+        <command name="load">netCDF/4.8.0-iimpi-2021a</command>
+        <command name="load">CMake/3.20.1-GCCcore-10.3.0</command>
+        <command name="load">ESMF/8.1.1-intel-2021a</command>
       </modules>
     </module_system>
     <environment_variables>
-      <env name="KMP_STACKSIZE">256M</env>
+      <env name="OMP_STACKSIZE">256M</env>
       <env name="I_MPI_EXTRA_FILESYSTEM_LIST">lustre</env>
       <env name="I_MPI_EXTRA_FILESYSTEM">on</env>
     </environment_variables>
+    <environment_variables comp_interface="nuopc">
+      <env name="ESMF_RUNTIME_PROFILE">ON</env>
+      <env name="ESMF_RUNTIME_PROFILE_OUTPUT">SUMMARY</env>
+      </environment_variables>
     <resource_limits>
       <resource name="RLIMIT_STACK">-1</resource>
     </resource_limits>
