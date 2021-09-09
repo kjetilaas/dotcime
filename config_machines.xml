@@ -130,10 +130,15 @@ This allows using a different mpirun command to launch unit tests -->
         <command name="load">XML-LibXML/2.0201-GCCcore-8.3.0</command>
         <command name="load">iimpi/2019b</command>
         <command name="load">netCDF-Fortran/4.5.2-iimpi-2019b</command>
+        <command name="load">ESMF/8.0.0-intel-2019b</command>
       </modules>
     </module_system>
     <environment_variables>
       <env name="KMP_STACKSIZE">256M</env>
+    </environment_variables>
+    <environment_variables comp_interface="nuopc">
+      <env name="ESMF_RUNTIME_PROFILE">ON</env>
+      <env name="ESMF_RUNTIME_PROFILE_OUTPUT">SUMMARY</env>
     </environment_variables>
     <resource_limits>
       <resource name="RLIMIT_STACK">-1</resource>
