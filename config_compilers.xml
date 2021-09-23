@@ -61,7 +61,6 @@ using a fortran linker.
   <PNETCDF_PATH>$(EBROOTPNETCDF)</PNETCDF_PATH>
   <MPI_PATH>$(MPI_ROOT)</MPI_PATH>
   <MPI_LIB_NAME>mpi</MPI_LIB_NAME>
-  <ESMF_LIBDIR>$(EBROOTESMF)/lib</ESMF_LIBDIR>
   <FFLAGS>
     <append DEBUG="FALSE"> -O2 </append>
     <append MODEL="micom"> -r8 </append>
@@ -88,7 +87,6 @@ using a fortran linker.
   <PNETCDF_PATH>$(EBROOTPNETCDF)</PNETCDF_PATH>
   <MPI_PATH>$(MPI_ROOT)</MPI_PATH>
   <MPI_LIB_NAME>mpi</MPI_LIB_NAME>
-  <ESMF_LIBDIR>$(EBROOTESMF)/lib</ESMF_LIBDIR>
   <FFLAGS>
     <append DEBUG="FALSE"> -O2 </append>
     <append MODEL="micom"> -r8 </append>

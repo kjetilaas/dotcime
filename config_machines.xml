@@ -98,6 +98,7 @@ This allows using a different mpirun command to launch unit tests -->
     <environment_variables comp_interface="nuopc">
       <env name="ESMF_RUNTIME_PROFILE">ON</env>
       <env name="ESMF_RUNTIME_PROFILE_OUTPUT">SUMMARY</env>
+      <env name="ESMFMKFILE">$EBROOTESMF/lib/esmf.mk</env>
       </environment_variables>
     <resource_limits>
       <resource name="RLIMIT_STACK">-1</resource>
@@ -146,6 +147,7 @@ This allows using a different mpirun command to launch unit tests -->
     <environment_variables comp_interface="nuopc">
       <env name="ESMF_RUNTIME_PROFILE">ON</env>
       <env name="ESMF_RUNTIME_PROFILE_OUTPUT">SUMMARY</env>
+      <env name="ESMFMKFILE">$EBROOTESMF/lib/esmf.mk</env>
     </environment_variables>
     <resource_limits>
       <resource name="RLIMIT_STACK">-1</resource>
