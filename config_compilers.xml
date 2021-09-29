@@ -98,7 +98,7 @@ using a fortran linker.
   <PIO_FILESYSTEM_HINTS>lustre</PIO_FILESYSTEM_HINTS>
   <SLIBS>
     <append>-mkl=sequential -lnetcdff -lnetcdf</append>
-  </SLIBS>
+  </SLIBS>  
 </compiler> 
 
 </config_compilers>
