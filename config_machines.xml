@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<config_machines  version="2.0">
-<!--
+<config_machines version="2.0">
+  <!--
 
 ===============================================================
 COMPILER and COMPILERS
@@ -45,12 +45,12 @@ the 'executable' tag must have arguments required for the chosen mpirun, as well
 
 unit_testing: can be 'true' or 'false'.
 This allows using a different mpirun command to launch unit tests -->
- <machine MACH="fram">
+  <machine MACH="fram">
     <DESC>Lenovo NeXtScale M5, 32-way nodes, dual 16-core Xeon E5-2683@2.10GHz, 64 GiB per node, os is Linux, batch system is SLURM</DESC>
     <NODENAME_REGEX>$HOSTNAME</NODENAME_REGEX>
     <OS>LINUX</OS>
     <COMPILERS>intel</COMPILERS>
-    <MPILIBS>impi</MPILIBS>
+    <MPILIBS>impi, mpi-serial</MPILIBS>
     <CIME_OUTPUT_ROOT>/cluster/work/users/$USER/ctsm</CIME_OUTPUT_ROOT>
     <DIN_LOC_ROOT>/cluster/shared/noresm/inputdata</DIN_LOC_ROOT>
     <DIN_LOC_ROOT_CLMFORC>/cluster/shared/noresm/inputdata/atm/datm7</DIN_LOC_ROOT_CLMFORC>
@@ -67,7 +67,7 @@ This allows using a different mpirun command to launch unit tests -->
     <mpirun mpilib="mpi-serial">
       <executable></executable>
     </mpirun>
-    <mpirun mpilib="default">
+    <mpirun mpilib="impi">
       <executable>mpirun</executable>
     </mpirun>
     <module_system type="module">
@@ -79,27 +79,19 @@ This allows using a different mpirun command to launch unit tests -->
       <cmd_path lang="python">/cluster/software/lmod/lmod/libexec/lmod python</cmd_path>
       <cmd_path lang="sh">module</cmd_path>
       <cmd_path lang="csh">module</cmd_path>
-      <modules>
+      <modules comp_interface="nuopc">
         <command name="purge">--force</command>
         <command name="load">StdEnv</command>
-        <command name="load">iimpi/2021a</command>
-        <command name="load">netCDF-Fortran/4.5.3-iimpi-2021a</command>
-        <command name="load">PnetCDF/1.12.2-iimpi-2021a</command>
-        <command name="load">netCDF/4.8.0-iimpi-2021a</command>
-        <command name="load">CMake/3.20.1-GCCcore-10.3.0</command>
-        <command name="load">ESMF/8.1.1-intel-2021a</command>
+        <!--command name="load">PnetCDF/1.12.2-iimpi-2021a</command-->
+        <command name="load">CMake/3.21.1-GCCcore-11.2.0</command>
+        <command name="load">ESMF/8.2.0-intel-2021b</command>
       </modules>
     </module_system>
     <environment_variables>
-      <env name="OMP_STACKSIZE">256M</env>
+      <env name="KMP_STACKSIZE">256M</env>
       <env name="I_MPI_EXTRA_FILESYSTEM_LIST">lustre</env>
       <env name="I_MPI_EXTRA_FILESYSTEM">on</env>
-    </environment_variables>
-   
-    <environment_variables comp_interface="nuopc">
-      <env name="ESMF_RUNTIME_PROFILE">ON</env>
-      <env name="ESMF_RUNTIME_PROFILE_OUTPUT">SUMMARY</env>
-      <env name="ESMFMKFILE">/cluster/software/ESMF/8.1.1-intel-2021a/lib/esmf.mk</env>
+      <env name="ESMFMKFILE">/cluster/software/ESMF/8.2.0-intel-2021b/lib/esmf.mk</env>
     </environment_variables>
     <resource_limits>
       <resource name="RLIMIT_STACK">-1</resource>
@@ -107,7 +99,7 @@ This allows using a different mpirun command to launch unit tests -->
   </machine>
 
   <machine MACH="saga">
-    <DESC> Hewlett Packard Enterprise - CentOS Linux release 7.6.1810 (Core) </DESC>
+    <DESC>Hewlett Packard Enterprise - CentOS Linux release 7.6.1810 (Core)</DESC>
     <NODENAME_REGEX>$HOSTNAME</NODENAME_REGEX>
     <OS>LINUX</OS>
     <COMPILERS>intel</COMPILERS>
@@ -132,28 +124,22 @@ This allows using a different mpirun command to launch unit tests -->
       <init_path lang="sh">/cluster/installations/lmod/lmod/init/sh</init_path>
       <cmd_path lang="python">/cluster/installations/lmod/lmod/libexec/lmod python</cmd_path>
       <cmd_path lang="sh">module</cmd_path>
-      <modules>
+      <modules comp_interface="nuopc">
         <command name="load">StdEnv</command>
-        <command name="load">CMake/3.15.3-GCCcore-8.3.0</command>
-        <command name="load">Perl/5.30.0-GCCcore-8.3.0</command>
-        <command name="load">XML-LibXML/2.0201-GCCcore-8.3.0</command>
-        <command name="load">iimpi/2019b</command>
-        <command name="load">netCDF-Fortran/4.5.2-iimpi-2019b</command>
-        <command name="load">ESMF/8.0.0-intel-2019b</command>
+        <command name="load">CMake/3.20.1-GCCcore-10.3.0</command>
+        <command name="load">XML-LibXML/2.0207-GCCcore-10.3.0</command>
+        <command name="load">ESMF/8.1.1-intel-2021a</command>
       </modules>
     </module_system>
     <environment_variables>
       <env name="KMP_STACKSIZE">256M</env>
-    </environment_variables>
-    <environment_variables comp_interface="nuopc">
-      <env name="ESMF_RUNTIME_PROFILE">ON</env>
-      <env name="ESMF_RUNTIME_PROFILE_OUTPUT">SUMMARY</env>
-      <env name="ESMFMKFILE">/cluster/software/ESMF/8.0.0-intel-2019b/lib/esmf.mk</env>
+      <env name="I_MPI_EXTRA_FILESYSTEM_LIST">lustre</env>
+      <env name="I_MPI_EXTRA_FILESYSTEM">on</env>
+      <env name="ESMFMKFILE">/cluster/software/ESMF/8.1.1-intel-2021a/lib/esmf.mk</env>
     </environment_variables>
     <resource_limits>
       <resource name="RLIMIT_STACK">-1</resource>
     </resource_limits>
   </machine>
-
 
 </config_machines>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config_compilers version="2.0">
-<!--
+  <!--
 ========================================================================
 This file defines compiler flags for building CESM.  General flags are listed first
 followed by flags specific to particular operating systems, followed by particular machines.
@@ -47,58 +47,58 @@ a C++ linker. If CXX_LINKER=FORTRAN, then the above CXX_LDFLAGS line
 should specify extra LDFLAGS needed when linking C++ and fortran code
 using a fortran linker.
 -->
-<!-- Define default values that can be overridden by specific
+  <!-- Define default values that can be overridden by specific
      compilers -->
-<compiler MACH="fram">
-  <CPPDEFS>
-   <append> -D$(OS) </append>
-  </CPPDEFS>
-  <FFLAGS>
-   <append> -xCORE-AVX2 </append>
-  </FFLAGS>
-  <NETCDF_C_PATH>$(EBROOTNETCDF)</NETCDF_C_PATH>
-  <NETCDF_FORTRAN_PATH>$(EBROOTNETCDFMINFORTRAN)</NETCDF_FORTRAN_PATH>
-  <PNETCDF_PATH>$(EBROOTPNETCDF)</PNETCDF_PATH>
-  <MPI_PATH>$(MPI_ROOT)</MPI_PATH>
-  <MPI_LIB_NAME>mpi</MPI_LIB_NAME>
-  <FFLAGS>
-    <append DEBUG="FALSE"> -O2 </append>
-    <append MODEL="micom"> -r8 </append>
-    <append MODEL="cam"> -init=zero,arrays </append>
-  </FFLAGS>
-  <MPICC> mpiicc </MPICC>
-  <MPICXX> mpiicpc </MPICXX>
-  <MPIFC> mpiifort </MPIFC>
-  <PIO_FILESYSTEM_HINTS>lustre</PIO_FILESYSTEM_HINTS>
-  <SLIBS>
-    <append>-mkl=sequential -lnetcdff -lnetcdf</append>
-  </SLIBS>
-</compiler> 
+  <compiler MACH="fram">
+    <CPPDEFS>
+      <append> -D$(OS) </append>
+    </CPPDEFS>
+    <FFLAGS>
+      <append> -xCORE-AVX2 </append>
+    </FFLAGS>
+    <NETCDF_C_PATH>$(EBROOTNETCDF)</NETCDF_C_PATH>
+    <NETCDF_FORTRAN_PATH>$(EBROOTNETCDFMINFORTRAN)</NETCDF_FORTRAN_PATH>
+    <PNETCDF_PATH>$(EBROOTPNETCDF)</PNETCDF_PATH>
+    <MPI_PATH>$(MPI_ROOT)</MPI_PATH>
+    <MPI_LIB_NAME>mpi</MPI_LIB_NAME>
+    <FFLAGS>
+      <append DEBUG="FALSE"> -O2 </append>
+      <append MODEL="micom"> -r8 </append>
+      <append MODEL="cam"> -init=zero,arrays </append>
+    </FFLAGS>
+    <MPICC> mpiicc </MPICC>
+    <MPICXX> mpiicpc </MPICXX>
+    <MPIFC> mpiifort </MPIFC>
+    <PIO_FILESYSTEM_HINTS>lustre</PIO_FILESYSTEM_HINTS>
+    <SLIBS>
+      <append>-mkl=sequential -lnetcdff -lnetcdf</append>
+    </SLIBS>
+  </compiler>
 
-<compiler MACH="saga">
-  <CPPDEFS>
-   <append> -D$(OS) </append>
-  </CPPDEFS>
-  <FFLAGS>
-   <append> -xCORE-AVX2 -no-fma </append>
-  </FFLAGS>
-  <NETCDF_C_PATH>$(EBROOTNETCDF)</NETCDF_C_PATH>
-  <NETCDF_FORTRAN_PATH>$(EBROOTNETCDFMINFORTRAN)</NETCDF_FORTRAN_PATH>
-  <PNETCDF_PATH>$(EBROOTPNETCDF)</PNETCDF_PATH>
-  <MPI_PATH>$(MPI_ROOT)</MPI_PATH>
-  <MPI_LIB_NAME>mpi</MPI_LIB_NAME>
-  <FFLAGS>
-    <append DEBUG="FALSE"> -O2 </append>
-    <append MODEL="micom"> -r8 </append>
-    <append MODEL="cam"> -init=zero,arrays </append>
-  </FFLAGS>
-  <MPICC> mpiicc </MPICC>
-  <MPICXX> mpiicpc </MPICXX>
-  <MPIFC> mpiifort </MPIFC>
-  <PIO_FILESYSTEM_HINTS>lustre</PIO_FILESYSTEM_HINTS>
-  <SLIBS>
-    <append>-mkl=sequential -lnetcdff -lnetcdf</append>
-  </SLIBS>  
-</compiler> 
+  <compiler MACH="saga">
+    <CPPDEFS>
+      <append> -D$(OS) </append>
+    </CPPDEFS>
+    <FFLAGS>
+      <append> -xCORE-AVX2 -no-fma </append>
+    </FFLAGS>
+    <NETCDF_C_PATH>$(EBROOTNETCDF)</NETCDF_C_PATH>
+    <NETCDF_FORTRAN_PATH>$(EBROOTNETCDFMINFORTRAN)</NETCDF_FORTRAN_PATH>
+    <PNETCDF_PATH>$(EBROOTPNETCDF)</PNETCDF_PATH>
+    <MPI_PATH>$(MPI_ROOT)</MPI_PATH>
+    <MPI_LIB_NAME>mpi</MPI_LIB_NAME>
+    <FFLAGS>
+      <append DEBUG="FALSE"> -O2 </append>
+      <append MODEL="micom"> -r8 </append>
+      <append MODEL="cam"> -init=zero,arrays </append>
+    </FFLAGS>
+    <MPICC> mpiicc </MPICC>
+    <MPICXX> mpiicpc </MPICXX>
+    <MPIFC> mpiifort </MPIFC>
+    <PIO_FILESYSTEM_HINTS>lustre</PIO_FILESYSTEM_HINTS>
+    <SLIBS>
+      <append>-mkl=sequential -lnetcdff -lnetcdf</append>
+    </SLIBS>
+  </compiler>
 
 </config_compilers>
