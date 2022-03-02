@@ -92,6 +92,9 @@ This allows using a different mpirun command to launch unit tests -->
       <env name="I_MPI_EXTRA_FILESYSTEM_LIST">lustre</env>
       <env name="I_MPI_EXTRA_FILESYSTEM">on</env>
       <env name="ESMFMKFILE">/cluster/software/ESMF/8.2.0-intel-2021b/lib/esmf.mk</env>
+      <env name="ESMF_LIBDIR">/cluster/software/ESMF/8.2.0-intel-2021b/lib</env>
+      <env name="ESMF_RUNTIME_PROFILE">ON</env>
+      <env name="ESMF_RUNTIME_PROFILE_OUTPUT">SUMMARY</env>
     </environment_variables>
     <resource_limits>
       <resource name="RLIMIT_STACK">-1</resource>
@@ -136,6 +139,9 @@ This allows using a different mpirun command to launch unit tests -->
       <env name="I_MPI_EXTRA_FILESYSTEM_LIST">lustre</env>
       <env name="I_MPI_EXTRA_FILESYSTEM">on</env>
       <env name="ESMFMKFILE">/cluster/software/ESMF/8.1.1-intel-2021a/lib/esmf.mk</env>
+      <env name="ESMF_LIBDIR">/cluster/software/ESMF/8.2.0-intel-2021b/lib</env>
+      <env name="ESMF_RUNTIME_PROFILE">ON</env>
+      <env name="ESMF_RUNTIME_PROFILE_OUTPUT">SUMMARY</env>
     </environment_variables>
     <resource_limits>
       <resource name="RLIMIT_STACK">-1</resource>
