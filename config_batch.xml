@@ -65,7 +65,7 @@
       <directive> --export=ALL</directive>
       <directive> --switches=1</directive>
     </directives>
-    <directives>
+    <directives queue="devel">
       <directive> --ntasks={{ total_tasks }}</directive>
       <directive> --export=ALL</directive>
       <directive> --switches=1</directive>
@@ -97,7 +97,7 @@
       <directive> --switches=1</directive>
       <directive> --mem-per-cpu=3G</directive>
     </directives>
-    <directives>
+    <directives queue="devel">
       <directive> --ntasks={{ total_tasks }}</directive>
       <directive> --export=ALL</directive>
       <directive> --switches=1</directive>
