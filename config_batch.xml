@@ -65,6 +65,12 @@
       <directive> --export=ALL</directive>
       <directive> --switches=1</directive>
     </directives>
+    <directives>
+      <directive> --ntasks={{ total_tasks }}</directive>
+      <directive> --export=ALL</directive>
+      <directive> --switches=1</directive>
+      <directive> --qos=devel</directive>
+    </directives>
     <directives queue="bigmem">
       <directive> --ntasks={{ total_tasks }}</directive>
       <directive> --export=ALL</directive>
@@ -72,7 +78,8 @@
       <directive> --mem-per-cpu=8G</directive>
     </directives>
     <queues>
-      <queue walltimemax="99:00:00" nodemin="1" nodemax="64" default="true">normal</queue>
+      <queue walltimemax="02:00:00" nodemin="1" nodemax="64" default="true">normal</queue>
+      <queue walltimemax="00:30:00" nodemin="1" nodemax="2" default="false">devel</queue>
       <queue walltimemax="99:00:00" nodemin="1" nodemax="8" default="false">bigmem</queue>
     </queues>
   </batch_system>
@@ -90,6 +97,12 @@
       <directive> --switches=1</directive>
       <directive> --mem-per-cpu=3G</directive>
     </directives>
+    <directives>
+      <directive> --ntasks={{ total_tasks }}</directive>
+      <directive> --export=ALL</directive>
+      <directive> --switches=1</directive>
+      <directive> --qos=devel</directive>
+    </directives>
     <directives queue="bigmem">
       <directive> --ntasks={{ total_tasks }}</directive>
       <directive> --export=ALL</directive>
@@ -98,6 +111,7 @@
     </directives>
     <queues>
       <queue walltimemax="02:00:00" nodemin="1" nodemax="64" default="true">normal</queue>
+      <queue walltimemax="00:30:00" nodemin="1" nodemax="2" default="false">devel</queue>
       <queue walltimemax="50:00:00" nodemin="1" nodemax="8" default="false">bigmem</queue>
     </queues>
   </batch_system>
