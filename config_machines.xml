@@ -55,7 +55,6 @@ This allows using a different mpirun command to launch unit tests -->
     <DIN_LOC_ROOT>/cluster/shared/noresm/inputdata</DIN_LOC_ROOT>
     <DIN_LOC_ROOT_CLMFORC>/cluster/shared/noresm/inputdata/atm/datm7</DIN_LOC_ROOT_CLMFORC>
     <DOUT_S_ROOT>/cluster/work/users/$USER/archive/$CASE</DOUT_S_ROOT>
-    <!--DOUT_L_MSROOT>UNSET</DOUT_L_MSROOT-->
     <BASELINE_ROOT>UNSET</BASELINE_ROOT>
     <CCSM_CPRNC>UNSET</CCSM_CPRNC>
     <GMAKE_J>8</GMAKE_J>
@@ -82,7 +81,6 @@ This allows using a different mpirun command to launch unit tests -->
       <modules>
         <command name="purge">--force</command>
         <command name="load">StdEnv</command>
-        <!--command name="load">PnetCDF/1.12.2-iimpi-2021a</command-->
         <command name="load">CMake/3.21.1-GCCcore-11.2.0</command>
         <command name="load">ESMF/8.2.0-intel-2021b</command>
       </modules>
@@ -126,16 +124,16 @@ This allows using a different mpirun command to launch unit tests -->
       <cmd_path lang="sh">module</cmd_path>
       <modules>
         <command name="load">StdEnv</command>
-        <command name="load">CMake/3.20.1-GCCcore-10.3.0</command>
-        <command name="load">XML-LibXML/2.0207-GCCcore-10.3.0</command>
-        <command name="load">ESMF/8.1.1-intel-2021a</command>
+        <command name="load">CMake/3.22.1-GCCcore-11.2.0</command>
+        <command name="load">XML-LibXML/2.0207-GCCcore-11.2.0</command>
+        <command name="load">ESMF/8.2.0-intel-2021b</command>
       </modules>
     </module_system>
     <environment_variables>
       <env name="KMP_STACKSIZE">256M</env>
       <env name="I_MPI_EXTRA_FILESYSTEM_LIST">lustre</env>
       <env name="I_MPI_EXTRA_FILESYSTEM">on</env>
-      <env name="ESMFMKFILE">/cluster/software/ESMF/8.1.1-intel-2021a/lib/esmf.mk</env>
+      <env name="ESMFMKFILE">/cluster/software/ESMF/8.2.0-intel-2021b/lib/esmf.mk</env>
     </environment_variables>
     <resource_limits>
       <resource name="RLIMIT_STACK">-1</resource>
