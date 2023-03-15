@@ -49,6 +49,32 @@ using a fortran linker.
 -->
   <!-- Define default values that can be overridden by specific
      compilers -->
+
+  <compiler MACH="betzy" COMPILER="intel">
+    <CPPDEFS>
+    <append> -D$(OS) </append>
+    </CPPDEFS>
+    <FFLAGS>
+    <append> -xavx2 -no-fma </append>
+    </FFLAGS>
+    <NETCDF_PATH>$(EBROOTNETCDFMINFORTRAN)</NETCDF_PATH>
+    <PNETCDF_PATH>$(EBROOTPNETCDF)</PNETCDF_PATH>
+    <MPI_PATH>$(MPI_ROOT)</MPI_PATH>
+    <MPI_LIB_NAME>mpi</MPI_LIB_NAME>
+    <FFLAGS>
+      <append DEBUG="FALSE"> -O2 </append>
+      <append MODEL="blom"> -r8 </append>
+      <append MODEL="cice"> -init=zero,arrays </append>
+    </FFLAGS>
+    <MPICC> mpicc </MPICC>
+    <MPICXX> mpicpc </MPICXX>
+    <MPIFC> mpifort </MPIFC>
+    <PIO_FILESYSTEM_HINTS>lustre</PIO_FILESYSTEM_HINTS>
+    <SLIBS>
+      <append>-mkl=sequential -lnetcdff -lnetcdf</append>
+    </SLIBS>
+  </compiler>
+
   <compiler MACH="fram">
     <CPPDEFS>
       <append> -D$(OS) </append>
